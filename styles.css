@@ -1,0 +1,209 @@
+/* Reset styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base styles */
+html {
+    font-size: 10px;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 2.2rem;
+}
+
+
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.85);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+/* On larger screens, sidebar will expand on hover */
+@media screen and (min-width: 768px) {
+    .sidebar {
+        width: 0; /* Initially hidden */
+    }
+    .sidebar:hover {
+        width: 250px; /* Expand on hover */
+    }
+}
+
+/* Navigation Styles */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    font-size: 2rem;
+    color: #000;
+    padding: 0 1rem;
+    transition: opacity .3s ease-in-out;
+}
+
+.nav-link:hover {
+    opacity: .7;
+}
+
+/* Book previews styles */
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px; /* or any other value that suits your design */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2rem; /* Optional spacing between sections */
+}
+
+/* To ensure that the content doesn't overflow the container */
+.book-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 100; /* This makes sure the content section flexes to fill the available space */
+}
+
+/* To ensure the image section takes up a fixed portion of the container */
+.book-image {
+    height: 80%; /* Adjust as needed, or use a fixed height */
+    background-size: cover;
+    background-position: center;
+}
+
+/* This makes sure all the .book-previews children (.preview-container) are the same width and height */
+.book-previews .preview-container {
+    width: calc(50% - 4rem); /* Adjust the width as necessary, accounting for the margin/gap */
+    height: 500px; /* Adjust the height as necessary */
+}
+
+/* Adjust the width and margins for responsiveness */
+@media (max-width: 768px) {
+    .book-previews .preview-container {
+        width: calc(100% - 4rem); /* Full width on smaller screens */
+        height: auto; /* Height can be auto to accommodate different content lengths */
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* Hover effect */
+.preview-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Title and text styles */
+.title {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.title-heading {
+    font-size: 5.6rem;
+    line-height: 1.07;
+}
+
+.author-heading {
+    font-size: 2.6rem;
+    margin-top: 0.6rem;
+}
+
+.description {
+    font-size: 1.8rem;
+    color: #4f4f4f;
+    margin-top: 0.8rem;
+}
+
+.cta-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    color: orange;
+    align-self: center;
+}
+
+.cta-link-darker {
+    color: darkgreen;
+}
+
+/* Footer styles */
+.footer {
+    padding: 4rem 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+/* Add styles for footer links and other content as needed */
+
+/* Background images for book previews */
+.preview-book1 .book-image {
+    background-image: url(images/Books/book1.png); /* Update with the correct path */
+}
+
+.preview-book2 .book-image {
+    background-image: url(images/Books/diploma.jpeg); /* Update with the correct path */
+}
+
+.preview-quotes .book-image {
+    background-image: url(images/Books/quotes.jpg); /* Update with the correct path */
+}
+
+.preview-other .book-image {
+    background-image: url(images/Books/github.png); /* Update with the correct path */
+}

@@ -1,0 +1,285 @@
+/* CSS for Quotes */
+
+/* BEGIN: Add "before" and "after" pseudo-elements to all elements */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+/* END: Add "before" and "after" pseudo-elements to all elements */
+
+html{
+    font-size: 10px;
+    font-family: 'SF Pro Display', sans-serif;
+
+}
+
+a{
+    display: block;
+    text-decoration: none;
+}
+
+.container{
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 2.2rem;
+
+}
+
+/* Sidebar Styles */
+.header {
+    width: 100%;
+    height: 10px;
+    background-position: center;
+    background-size: cover;
+}
+
+.side-nav {
+    width: 110px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 15px;
+    background: rgba(37, 37, 37, 0.389);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between(10px);
+    flex-direction: column;
+    transition: width 0.5s;
+    color:  rgb(0, 179, 255);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+.user div{
+    display: none;
+}
+.user h2 {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.user-img {
+    width: 40px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+ul li {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+ul li img {
+    width: 30px;
+    margin-right: 0;
+}
+
+ul li p {
+    white-space: nowrap;
+    display: none;
+}
+
+.side-nav:hover{
+    width: 250px;
+
+}
+
+.side-nav:hover .user div {
+    display: block;
+}
+
+.side-nav:hover .user {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.side-nav:hover .user-img {
+    margin: 0;
+}
+
+.side-nav:hover ul li p {
+    display: block;
+}
+
+.side-nav:hover ul li img {
+    margin-right: 10px;
+}
+
+.side-nav:hover ul li {
+    justify-content: flex-start;
+}
+
+.side-nav:hover ul li:hover {
+    background: hsla(199, 100%, 50%, 0.839);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+/* Sidebar -------------------------------------------------------------*/
+
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -1rem;
+}
+
+.nav-list-mobile{
+    display: none;
+}
+
+.nav-link{
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    padding: 0 1rem;
+    transition: opacity .5s;
+
+}
+
+.nav-link:hover{
+    opacity: .5;
+}
+
+.nav-link-logo{
+    width: 1.5rem;
+    height: 4rem;
+    background: url(images/Preview/logo.png) center no-repeat;
+    background-size: cover;
+}
+
+.nav-link-logo:hover{
+    opacity: 0.4;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background: black;
+}
+
+.quote-box {
+    background: #0f0f0f;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px;
+    color: rgb(0, 191, 255);
+    font-family: Arial, sans-
+   
+}
+
+.quote-box h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.quote-box h2::after {
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quote-box blockquote{
+    font-size: 26px;
+    min-height: 70px;
+}
+
+.quote-box blockquote::before, blockquote::after{
+    content: '"';
+}
+
+.quote-box span{
+    display: block;
+    margin-top: 5px;
+    float: right;
+    position: relative;
+}
+
+.quote-box span::before{
+    content: '';
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    left: -30px;
+    top: 50px;
+
+}
+
+.quote-box div{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-box button{
+    background: rgb(0, 0, 0);
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid rgb(0, 191, 255);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.quote-box button img{
+    width: 25px;
+    margin-right: 10px;
+
+}
+
+.quote-box button:nth-child(1){
+    background: rgb(0, 191, 255);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+
+
