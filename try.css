@@ -20,6 +20,7 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    align-items: center;
 }
 
 a {
@@ -33,18 +34,128 @@ a {
     margin: 0 auto;
     padding: 0 2.2rem;
 }
+/*Iphone Animation Start*/
 
-/* Header styles */
-header {
-    position: fixed;
-    top: 0;
-    z-index: 1000;
+  
+/*Iphone Animation End*/
+
+/* Sidebar Styles */
+.header {
     width: 100%;
-    height: 4.4rem;
-    background-color: rgba(93, 93, 93, 0.237);
-    backdrop-filter: blur(2rem);
+    height: 10px;
+    background-position: center;
+    background-size: cover;
 }
 
+.side-nav {
+    width: 110px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 15px;
+    background: rgba(0, 0, 0, 0.111);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between(10px);
+    flex-direction: column;
+    transition: width 0.5s;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+.user div{
+    display: none;
+}
+.user h2 {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.user-img {
+    width: 40px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+ul li {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+ul li img {
+    width: 30px;
+    margin-right: 0;
+}
+
+ul li p {
+    white-space: nowrap;
+    display: none;
+}
+
+.side-nav:hover{
+    width: 250px;
+
+}
+
+.side-nav:hover .user div {
+    display: block;
+}
+
+.side-nav:hover .user {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.side-nav:hover .user-img {
+    margin: 0;
+}
+
+.side-nav:hover ul li p {
+    display: block;
+}
+
+.side-nav:hover ul li img {
+    margin-right: 10px;
+}
+
+.side-nav:hover ul li {
+    justify-content: flex-start;
+}
+
+.side-nav:hover ul li:hover {
+    background: rgba(255, 255, 255, 0.839);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+}
+
+/* Sidebar -------------------------------------------------------------
+
+
+/* Navigation Styles */
 .nav-list {
     list-style: none;
     display: flex;
@@ -64,12 +175,16 @@ header {
 }
 
 /* Book previews styles */
-/* Each item takes up to 45% of the container width, with a max of two per line */
 .preview-container {
-    flex: 0 0 45%; /* Do not grow, do not shrink, start at 45% of the parent width */
-    min-height: 300px; /* or any other value to standardize the height */
-    margin-bottom: 2rem; /* space between rows */
-    /* the rest of your .preview-container styles */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px; /* or any other value that suits your design */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2rem; /* Optional spacing between sections */
 }
 
 /* To ensure that the content doesn't overflow the container */
@@ -93,21 +208,16 @@ header {
     width: calc(50% - 4rem); /* Adjust the width as necessary, accounting for the margin/gap */
     height: 500px; /* Adjust the height as necessary */
 }
-.book-previews {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* distributes space around items */
-    align-items: flex-start; /* aligns items to the start of the flex line */
-}
 
 /* Adjust the width and margins for responsiveness */
 @media (max-width: 768px) {
-    .preview-container {
-        flex: 0 0 100%; /* full width on smaller screens */
-        min-height: auto; /* height can adjust to content */
-        /* the rest of your responsive .preview-container styles */
+    .book-previews .preview-container {
+        width: calc(100% - 4rem); /* Full width on smaller screens */
+        height: auto; /* Height can be auto to accommodate different content lengths */
+        margin-bottom: 2rem;
     }
 }
+
 
 /* Hover effect */
 .preview-container:hover {
@@ -150,16 +260,26 @@ header {
 }
 
 /* Footer styles */
+.footer-divider {
+    color: #4f4f4f25;
+    width: 100%;
+}
 .footer {
     padding: 4rem 0;
-    background-color: #333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #3d3d3d;
     text-align: center;
     margin-top: 4rem;
 }
 
 .footer p {
     margin-bottom: 1rem;
+}
+.footer-links{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    gap: 10px;   
 }
 
 /* Add styles for footer links and other content as needed */
@@ -170,7 +290,7 @@ header {
 }
 
 .preview-book2 .book-image {
-    background-image: url(images/Books/book2.png); /* Update with the correct path */
+    background-image: url(images/Books/diploma.jpeg); /* Update with the correct path */
 }
 
 .preview-quotes .book-image {

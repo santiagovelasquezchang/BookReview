@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SantiagoVelasquez</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    
+    <!--Sidebar-->
+
+    <div class="header">
+        <div class="side-nav">
+            <div class="user">
+                <img src="images/Books/yo.JPG" class="user-img">
+                <div>
+                    <h2>Santiago Velasquez</h2>
+                    <h2>Chang</h2>
+                    <p>svelasquez2214@gmail.com</p>
+                </div>
+            </div>
+            <ul>
+                <li ><img src="images/Books/home.png" alt="">Home</li>
+                <li ><img src="images/Books/projects.png" alt="">Projects</li>
+                <li><img src="images/Books/reports.png" alt="">Reports</li>
+                <li><img src="images/Books/members.png" alt="">Pictures</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!--End of Header Section-->
+
+
+<!-- Footer Section -->
+<hr class="footer-divider">
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Santiago Velasquez. All rights reserved.</p>
+        <!-- Social media or additional links -->
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/santiagovelasquez" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/santiagovelasquez" class="footer-link">GitHub</a>
+            <!-- Add more links as needed -->
+        </div>
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+ 
+
+    <!-- React dependencies -->
+    
+    
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+
+    <!-- Your React code -->
+    <script>
+        function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+    }
+    
+    // Assuming you have a button or element to trigger this function
+    // You'll need to add an event listener to your menu icon
+    document.querySelector('.mobile-menu').addEventListener('click', toggleSidebar);
+
+        // Your React components and logic go here
+    </script>
+</body>
+</html>
